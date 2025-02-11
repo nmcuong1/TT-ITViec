@@ -1,0 +1,32 @@
+
+
+  .header {
+    background: linear-gradient(to right, black, red);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    display: inline;
+    float: right;
+  }
+  
+  .header nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  .header nav ul li a {
+    color: #55ee27;
+    text-decoration: none;
+  }
+
+
+.logo {
+  height: 40px;
+  margin-right: auto;
+}

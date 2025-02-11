@@ -1,0 +1,32 @@
+/* src/assets/styles/FeaturedCompanies.css */
+.featured-companies {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .featured-companies h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .featured-companies ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .featured-companies li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .featured-companies h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .featured-companies p {
+    font-size: 14px;
+    color: #555;
+  }
+  

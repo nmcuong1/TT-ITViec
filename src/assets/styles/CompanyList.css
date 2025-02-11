@@ -1,0 +1,31 @@
+/* src/assets/styles/CompanyList.css */
+.company-list {
+    padding: 20px;
+  }
+  
+  .company-list h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .company-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .company-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .company-list h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .company-list p {
+    font-size: 14px;
+    color: #555;
+  }
+  
