@@ -1,0 +1,204 @@
+@import "../pages/theme.scss";
+
+body{
+    margin: 0;
+}
+
+*{
+    font-family: Roboto;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    // background: map-get($theme-colors , "main" );
+    background: linear-gradient(to right, black, red);
+    color: #fff;
+    padding: 5px;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+  .row {
+   display: flex;
+   flex-wrap: wrap;
+   
+  } 
+  .col-6 {
+    flex:0 0 50%;
+    max-width: 50%;
+    display: flex;
+    
+   }
+   .end {
+    
+    flex:0 0 45%;
+    max-width: 48%;
+    display: flex;
+    justify-content: flex-end;
+   }  
+   nav ul {
+    list-style: none;
+    display: inline;
+    float: right;
+  }
+    
+   nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+    
+   nav ul li a {
+    color: #55ee27;
+    text-decoration: none;
+  }
+    
+  .logo {
+    height: 40px;
+    margin-right: auto;
+  }
+
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px; /* Adjust space between items */
+    justify-self: end;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+    
+  }
+  li{
+    list-style: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: inline;
+    float: right;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #55ee27;
+    text-decoration: none;
+}
+
+nav ul .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+    padding: 10px;
+    z-index: 1000;
+    width: 200px; /* Adjust width as needed */
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul .dropdown li {
+    display: block;
+    margin: 0;
+    width: 100%; /* Ensure each item takes up the full width */
+}
+
+nav ul .dropdown li a {
+    color: #fff;
+    padding: 10px; /* Adjust padding as needed */
+    display: block; /* Make the link take up the full space of the list item */
+    text-align: left;
+}
+nav ul .dropdown li a:hover {
+  background-color: #333; /* Highlight color on hover */
+  color: #fff; /* Text color on hover */
+}
+//footer
+
+footer {
+    background: linear-gradient(to right, black, red);
+    color: #fff;
+    padding: 20px; /* Tăng padding để dễ nhìn */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Căn chỉnh các phần tử theo đầu trang */
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống dòng nếu cần */
+  }
+  
+  .footer-logo, .footer-social, .footer-links {
+    flex: 1 1 100%; /* Mỗi phần tử chiếm toàn bộ chiều rộng khi xuống dòng */
+    margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
+    text-align: center; /* Căn giữa nội dung */
+  }
+  
+  .footer-logo img {
+    max-width: 150px;
+    margin: 0 auto; /* Căn giữa hình ảnh */
+  }
+  
+  .footer-logo p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống dòng nếu cần */
+  }
+  
+  .footer-links div {
+    flex: 1;
+    margin: 10px; /* Khoảng cách giữa các cột */
+  }
+  
+  .footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Đảm bảo rằng không có khoảng trống xung quanh danh sách */
+    width: 100%; /* Đảm bảo danh sách chiếm đủ chiều rộng của cột */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước của phần tử */
+  }
+  
+  .footer-links ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social a {
+    margin: 0 10px;
+  }
+  
+  .footer-social img {
+    width: 30px;
+    height: 30px;
+  }
+  

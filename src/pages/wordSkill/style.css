@@ -1,0 +1,20 @@
+.word-skill ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    list-style: none;
+    padding: 0;
+}
+.container-word-skill{
+   margin: auto;
+   max-width: 1050px;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc (nếu muốn) */
+    
+}
+.h1{
+    display: block;
+}
+.boder{
+    border-bottom: 1px solid #dedede;
+}
