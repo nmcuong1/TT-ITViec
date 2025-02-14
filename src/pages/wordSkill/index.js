@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../wordSkill/style.css'
+import '../wordSkill/style.css';
+
 const WordSkill = () => {
     const [skills, setSkills] = useState([]);
 
@@ -17,14 +19,13 @@ const WordSkill = () => {
 
     return (
         <div className='container-word-skill'>
-            <h1>Tìm việc làm IT theo kỹ năng</h1>
-            <div className='boder'></div>
+            <h1 className="h1">Tìm việc làm IT theo kỹ năng</h1>
             <div className='word-skill'>
-            <ul>
                 {skills.map((skill, index) => (
-                    <li key={index}>{skill.name}</li>
+                    <Link to={`/tim-viec-lam-it/${skill.name.toLowerCase()}`} key={index} className="skill-button">
+                        {skill.name}
+                    </Link>
                 ))}
-            </ul>
             </div>
         </div>
     );

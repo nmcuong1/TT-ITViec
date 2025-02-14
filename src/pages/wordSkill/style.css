@@ -4,6 +4,7 @@
     gap: 20px; /* Khoảng cách giữa các cột */
     list-style: none;
     padding: 0;
+    
 }
 .container-word-skill{
    margin: auto;
@@ -14,7 +15,33 @@
 }
 .h1{
     display: block;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #070101;
 }
-.boder{
-    border-bottom: 1px solid #dedede;
+
+.word-skill {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+    gap: 15px; /* Khoảng cách giữa các button */
+    margin-top: 20px;
+}
+
+.skill-button {
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: start;
+    color: black;
+}
+/* Đảm bảo button căn giữa nếu không đủ phần tử */
+@media (max-width: 1024px) {
+    .word-skill {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột trên màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .word-skill {
+        grid-template-columns: repeat(1, 1fr); /* Hiển thị 1 cột trên mobile */
+    }
 }
