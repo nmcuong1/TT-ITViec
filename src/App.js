@@ -1,24 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './assets/styles/App.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/TT-ITViec">
       <div className="App">
-      <Header />
+        <Header />
         <Routes>
-          <Route path="/TT-ITViec" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           {/* <Route path="/jobs" element={<JobPage />} />
           <Route path="/companies" element={<CompanyPage />} /> */}
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
