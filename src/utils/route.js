@@ -1,4 +1,5 @@
 export const ROUTE = {
+    
     USER:{
         HOME:"", 
         WORD_SKILL:"tim-viec-lam-it",
@@ -7,5 +8,6 @@ export const ROUTE = {
         WORD_CITY:"tim-viec-lam-theo-thanh-pho", 
         JOBLIST:"tim-viec-lam-it/:skillName", 
         JOBLEVEL:"tim-viec-lam-it-theo-cap-bac/:skillLevel", 
+        JOBCONGTY:"tim-viec-lam-it-theo-cong-ty/:Congty", 
     }
 }

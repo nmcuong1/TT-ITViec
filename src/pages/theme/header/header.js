@@ -27,6 +27,8 @@ const Header = () => {
                 {
                     name: "Việc làm IT theo công ty",
                     path: ROUTE.USER.WORD_CONGTY,
+                    isShowApiMenu: false,
+                    apiMenu: []
                 },
                 {
                     name: "Việc làm IT theo thành phố",
@@ -54,7 +56,7 @@ const Header = () => {
         try {
             const response = await axios.get(apiUrl);
             const apiMenu = response.data;
-
+            
             setMenu(menu.map((item, i) => {
                 if (i === parentIndex) {
                     const updatedChild = item.child.map((child, j) => {
@@ -122,6 +124,8 @@ const Header = () => {
                                                             fetchApiMenu(index, subIndex, 'https://67aacc0565ab088ea7e77fb0.mockapi.io/WordSkill') :
                                                             subItem.path === ROUTE.USER.WORD_LEVEL ?
                                                                 fetchApiMenu(index, subIndex, 'https://67aacc0565ab088ea7e77fb0.mockapi.io/wordlevel') :
+                                                                    subItem.path === ROUTE.USER.WORD_CONGTY ?
+                                                                        fetchApiMenu(index, subIndex, 'https://67b2ea33bc0165def8cf207b.mockapi.io/apiCongtyapiCongty') :
                                                                 null
                                                     }>
                                                     <Link to={subItem.path}>{subItem.name}</Link>
@@ -129,12 +133,13 @@ const Header = () => {
                                                         <ul className="dropdown-submenu">
                                                         {subItem.apiMenu.map((apiItem, apiIndex) => (
                                                             <li key={apiIndex}
+                                                            
                                                                 onClick={() => handleSubmenuClick(apiItem.name, subItem.path === ROUTE.USER.WORD_SKILL ? 'skill' : 
                                                                                                     subItem.path === ROUTE.USER.WORD_LEVEL ? 'level' : 
-                                                                                                    subItem.path === ROUTE.USER.WORD_CONGTY ? 'company' : 
+                                                                                                    subItem.path === ROUTE.USER.WORD_CONGTY ? 'congty' : 
                                                                                                     subItem.path === ROUTE.USER.WORD_CITY ? 'city' : '')}
                                                                 style={{ cursor: "pointer" }}>
-                                                                <Link to="/hehe">{apiItem.name}</Link>
+                                                                <Link to="/hheh">{apiItem.name}</Link>
                                                             </li>
                                                         ))}
                                                     </ul>

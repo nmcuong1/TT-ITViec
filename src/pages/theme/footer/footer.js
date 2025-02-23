@@ -50,10 +50,13 @@ const footer = () => {
           </div>
           <div>
             <h4>Liên hệ</h4>
-            <p>Để đăng tin tuyển dụng tại:</p>
-            <p>Hồ Chí Minh: +84 123 456 789</p>
-            <p>Hà Nội: +84 987 654 321</p>
-            <p>Email: contact@yourcompany.com</p>
+            <ul>
+              <li>Để đăng tin tuyển dụng tại:</li>
+              <li>Hồ Chí Minh: +84 123 456 789</li>
+              <li>Hà Nội: +84 987 654 321</li>
+              <li>Email: contact@yourcompany.com</li>
+          </ul>
+
           </div>
         </div>
         

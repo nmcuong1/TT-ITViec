@@ -3,12 +3,18 @@ import { useEffect, useState } from 'react';
 import '../jobLevel/style.css';
 
 const JobLevel = () => {
-  const { skillLevel } = useParams(); // Lấy tên kỹ năng từ URL
-  
-  const [searchTerm, setSearchTerm] = useState("");
-  const [jobsData, setJobsData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedJob, setSelectedJob] = useState(null);
+
+  // Lấy giá trị 'skillLevel' từ URL
+const { skillLevel } = useParams();  
+
+
+const [searchTerm, setSearchTerm] = useState("");  
+// State chứa danh sách công việc lấy từ API hoặc cơ sở dữ liệu
+const [jobsData, setJobsData] = useState([]); 
+
+const [loading, setLoading] = useState(true); 
+
+const [selectedJob, setSelectedJob] = useState(0);  
 
   useEffect(() => {
     fetch("https://67ada1593f5a4e1477de5d4c.mockapi.io/jobLevel")
@@ -88,12 +94,12 @@ const JobLevel = () => {
                       <input
                         type="range"
                         min="0"
-                        max="100"
+                        max="10000"
                         value={salary}
                         onChange={(e) => setSalary(e.target.value)}
                         className="filter-salary-input"
                       />
-                      <p>{salary} triệu VND</p>
+                      <p>{salary} USD</p>
                     </div>
                   )}
                 </div>
@@ -151,12 +157,12 @@ const JobLevel = () => {
                   <input
                     type="range"
                     min="0"
-                    max="100"
+                    max="10000"
                     value={salary}
                     onChange={(e) => setSalary(e.target.value)}
                     className="filter-salary-input"
                   />
-                  <p>{salary} triệu VND</p>
+                  <p>{salary} USD</p>
                 </div>
                 <h3 className="filter-modal-section-title">Lĩnh Vực</h3>
                 <input type="text"placeholder="Tìm kiếm..."className="filter-search-input"
@@ -217,27 +223,58 @@ const JobLevel = () => {
             ))}
           </div>
           <div className="job-level-col-6-right">
-            {selectedJob ? (
-              <div className="job-detail">
-                <h3>{selectedJob.title}</h3>
-                <p><strong>Đăng:</strong> {selectedJob.postedTime}</p>
-                <p><strong>Công ty:</strong> {selectedJob.company}</p>
-                <p><strong>Địa điểm:</strong> {selectedJob.location}</p>
-                {selectedJob.salary && <p><strong>Lương:</strong> {selectedJob.salary}</p>}
-                {selectedJob.benefits && (
-                  <ul>
-                    {selectedJob.benefits.map((benefit, bIndex) => (
-                      <li key={bIndex}>{benefit}</li>
-                    ))}
-                  </ul>
-                )}
-               
-                <button className="apply-button">Ứng Tuyển</button>
+          {selectedJob ? (
+            <div className="job-detail">
+             <div className='job-logo'> <img src={selectedJob.logo} alt="Company Logo" />
+              <div className='job-detail-right'>
+              <h3>{selectedJob.title}</h3>
+              <p><strong>Đăng:</strong> {selectedJob.postedTime}</p>
+              <p><strong>Công ty:</strong> {selectedJob.company}</p>
+              <p><strong>Địa điểm:</strong> {selectedJob.location}</p>
+              {selectedJob.salary && <p><strong>Lương:</strong> {selectedJob.salary}</p>}
               </div>
-            ) : (
-              <h2>Chọn công việc để xem chi tiết</h2>
-            )}
-          </div>
+              </div>
+              <button className="apply-button">Ứng Tuyển</button>
+             
+              <div className="job-detail-content">
+              
+                <ul>
+                  {selectedJob.jobDescription.map((desc, index) => (
+                    <li key={index}>{desc}</li>
+                  ))}
+                </ul>
+                <h5>Must-Have:</h5>
+                <ul>
+                  {selectedJob.jobRequirements.mustHave.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
+                <h5>Nice-To-Have:</h5>
+                <ul>
+                  {selectedJob.jobRequirements.niceToHave.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
+                <p><strong>Initial Start-Up:</strong> {selectedJob.whyYouWillLove.initialStartUp}</p>
+                <p><strong>Lương:</strong> {selectedJob.whyYouWillLove.salary}</p>
+              
+                <ul>
+                  {selectedJob.whyYouWillLove.yourBenefits.map((benefit, index) => (
+                    <li key={index}>{benefit}</li>
+                  ))}
+                </ul>
+                <ul>
+                  {selectedJob.whyYouWillLove.workingEnvironment.map((env, index) => (
+                    <li key={index}>{env}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <h2>Chọn công việc để xem chi tiết</h2>
+          )}
+        </div>
+
         </div>
       </div>
     </div>

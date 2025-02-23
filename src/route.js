@@ -7,8 +7,8 @@ import WordSkill from "./pages/wordSkill";
 import wordLevel from "./pages/wordlevel"
 import JobList from "./pages/jobList"
 import JobLevel from "./pages/jobLevel"
-
-
+import wordCongty from "./pages/workCongty"
+import JobCongty from "./pages/jobCongty"
 const renderRouter = () => {
     const userRouter = [
         {
@@ -24,12 +24,20 @@ const renderRouter = () => {
             component: wordLevel
         },
         {
+            path: ROUTE.USER.WORD_CONGTY,
+            component: wordCongty
+        },
+        {
             path: ROUTE.USER.JOBLIST,
             component: JobList
         },
         {
             path: ROUTE.USER.JOBLEVEL,
             component: JobLevel
+        },
+        {
+            path: ROUTE.USER.JOBCONGTY,
+            component: JobCongty
         },
     ];
 
@@ -41,6 +49,7 @@ const renderRouter = () => {
                 ))}
                  <Route path="/tim-viec-lam-it/:skillName" element={JobList} />
                  <Route path="/tim-viec-lam-it-theo-cap-bac/:skillLevel" element={JobLevel} />
+                <Route path="/tim-viec-lam-it-theo-cong-ty/:Congty" element={JobCongty} />
             </Routes>
         </MasterLayout>
     );

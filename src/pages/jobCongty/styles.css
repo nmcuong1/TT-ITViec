@@ -1,0 +1,95 @@
+.container-body {
+    width: 100%;
+    display: flex;
+    background: linear-gradient(to right, black, red);
+    color: #151212;
+    padding: 20px;
+    align-items: center;
+}
+.genneral-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.genneral-info h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.genneral-info p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.genneral-info p strong {
+    color: #000;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.company {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.company p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.company p strong {
+    color: #000;
+    list-style: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    width: 30%;
+}
+
+.btn-1, .btn-2 {
+    flex: 1;
+    padding: 15px 32px;
+    margin: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn-1 {
+    background-color: #e10d0d;
+    color: white;
+}
+
+.btn-1:hover {
+    background-color: #b70606;
+}
+
+.btn-2 {
+    background-color: #ffffff;
+    color: rgb(255, 18, 18);
+}
+
+.btn-2:hover {
+    background-color: #f8e1e1;
+}
