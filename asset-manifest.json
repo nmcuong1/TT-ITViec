@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TT-ITViec/static/css/main.5f93c395.css",
+    "main.js": "/TT-ITViec/static/js/main.58f39050.js",
+    "static/media/icon_face.jpg": "/TT-ITViec/static/media/icon_face.be63363bce395929dc63.jpg",
+    "static/media/logo_itviec.webp": "/TT-ITViec/static/media/logo_itviec.4ae4c23d11b98dd3b3ec.webp",
+    "index.html": "/TT-ITViec/index.html",
+    "main.5f93c395.css.map": "/TT-ITViec/static/css/main.5f93c395.css.map",
+    "main.58f39050.js.map": "/TT-ITViec/static/js/main.58f39050.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f93c395.css",
+    "static/js/main.58f39050.js"
+  ]
+}
