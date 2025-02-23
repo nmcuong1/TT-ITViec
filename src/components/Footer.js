@@ -1,9 +1,9 @@
 import React from 'react';
-import iconLinkedin from '../../../assets/images/icon/social.png'
-import iconface from '../../../assets/images/icon/icon_face.jpg'
-import iconyoutobe from '../../../assets/images/icon/icon_youyobe.png'
-import logo from '../../../assets/images/logo_itviec.webp';
-
+import iconLinkedin from '../assets/images/icon/social.png'
+import iconface from '../assets/images/icon/icon_face.jpg'
+import iconyoutobe from '../assets/images/icon/icon_youyobe.png'
+import logo from '../assets/images/logo_itviec.webp';
+import "../assets/styles/Footer.css"
 const footer = () => {
     return (<footer>
       

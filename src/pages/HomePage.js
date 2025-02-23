@@ -1,19 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import '../jobLevel/style.css';
+import "../assets/styles/HomePage.css"
+const HomePage = () => {
 
-const JobLevel = () => {
-
-  // Lấy giá trị 'skillLevel' từ URL
-const { skillLevel } = useParams();  
-
-
-const [searchTerm, setSearchTerm] = useState("");  
-// State chứa danh sách công việc lấy từ API hoặc cơ sở dữ liệu
+const [searchTerm, setSearchTerm] = useState("");
 const [jobsData, setJobsData] = useState([]); 
-
 const [loading, setLoading] = useState(true); 
-
 const [selectedJob, setSelectedJob] = useState(0);  
 
   useEffect(() => {
@@ -22,6 +14,10 @@ const [selectedJob, setSelectedJob] = useState(0);
       .then((data) => {
         setJobsData(data);
         setLoading(false);
+
+        if (data.length > 0 && data[0].jobs.length > 0) {
+          setSelectedJob(data[0].jobs[0]); 
+        }
       })
       .catch((error) => {
         console.error("Lỗi khi tải dữ liệu:", error);
@@ -46,8 +42,8 @@ const [selectedJob, setSelectedJob] = useState(0);
       prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
     );
   };
+  const filteredJobsData = jobsData;
 
-  const filteredJobsData = jobsData.filter(category => category.skillLevel.toLowerCase() === skillLevel.toLowerCase());
   const filteredFields = fields.filter(field =>
     field.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -56,9 +52,17 @@ const [selectedJob, setSelectedJob] = useState(0);
   }
 
   return (
+    
     <div className='body'>
+      <div class="body-header">
+        <div class="search-bar">
+          <input type="text" placeholder="Tất cả thành phố" />
+          <input type="text" placeholder="chuyen vien phan tich nghiep vu" />
+          <button>Tìm Kiếm</button>
+        </div>
+      </div>
       <div>
-        <h2>Công việc IT liên quan đến cấp bậc: {skillLevel} tại VIỆT NAM</h2>
+        <h3>5 việc làm chuyen vien phan tich nghiep vu tại Việt Nam</h3>
         <div className="filter-container">
           <div className="filter-button-container">
             <div className="filter-left">
@@ -281,4 +285,4 @@ const [selectedJob, setSelectedJob] = useState(0);
   );
 };
 
-export default JobLevel;
+export default HomePage;
